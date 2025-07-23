@@ -1,8 +1,9 @@
 import pandas as pd
 import ast
 
-movies = pd.read_csv("/Users/samchirayil/Movie Recommender/Data/popular_movies.csv")
-credits = pd.read_csv("/Users/samchirayil/Movie Recommender/Data/credits.csv")
+movies = pd.read_csv("data/popular_movies.csv")
+credits = pd.read_csv("data/credits.csv")
+
 df = pd.merge(movies, credits, on="title")
 print(df.columns)
 print(df[['title','genres','cast','crew']].head())
