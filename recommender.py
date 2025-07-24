@@ -1,12 +1,12 @@
 import pandas as pd
 import ast
 
-movies = pd.read_csv("https://drive.google.com/uc?id=1LBY4h6SrBTAcwvY-YU-CdnYSkrvsmFBQ")
-credits = pd.read_csv("https://drive.google.com/uc?id=1Y-uBP79WYcymKUz0vv9aqIRpQ3XvbFgl")
+# ✅ Correct links to raw files
+movies = pd.read_csv("https://drive.usercontent.google.com/download?id=1LBY4h6SrBTAcwvY-YU-CdnYSkrvsmFBQ&confirm=t")
+credits = pd.read_csv("https://drive.usercontent.google.com/download?id=1Y-uBP79WYcymKUz0vv9aqIRpQ3XvbFgl&confirm=t")
 
 print("🎬 Movies columns:", movies.columns.tolist())
 print("🎭 Credits columns:", credits.columns.tolist())
-
 
 df = pd.merge(movies, credits, on="title")
 print(df.columns)
