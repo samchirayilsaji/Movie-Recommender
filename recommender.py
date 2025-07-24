@@ -2,7 +2,7 @@ import pandas as pd
 import ast
 
 movies = pd.read_csv("https://drive.google.com/uc?id=1LBY4h6SrBTAcwvY-YU-CdnYSkrvsmFBQ")
-credits = pd.read_csv("/Users/samchirayil/Downloads/archive/credits.csv")
+credits = pd.read_csv("https://drive.google.com/uc?id=1Y-uBP79WYcymKUz0vv9aqIRpQ3XvbFgl")
 
 print("🎬 Movies columns:", movies.columns.tolist())
 print("🎭 Credits columns:", credits.columns.tolist())
