@@ -25,13 +25,16 @@ if st.button("Recommend"):
 results = recommend(selected_movie)
 
 if results:
-    cols = st.columns(5)  # Show 2 rows of 5 posters each
-    for idx, (title, rating, poster_path) in enumerate(results):
-        col = cols[idx % 5]  # Rotate across 5 columns
-        with col:
-            if poster_path:
-                full_url = f"https://image.tmdb.org/t/p/w500{poster_path}"
-                st.image(full_url, use_container_width=True)
-            st.markdown(f"**{title}**  ⭐ {rating}")
+    num_columns = 5
+    for row_start in range(0, len(results), num_columns):
+        cols = st.columns(num_columns)
+        for idx in range(num_columns):
+            if row_start + idx < len(results):
+                title, rating, poster_path = results[row_start + idx]
+                with cols[idx]:
+                    if poster_path:
+                        full_url = f"https://image.tmdb.org/t/p/w500{poster_path}"
+                        st.image(full_url, use_container_width=True)
+                    st.markdown(f"**{title}**  ⭐ {rating}")
 else:
     st.warning("No good matches found.")
