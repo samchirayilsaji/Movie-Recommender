@@ -4,7 +4,7 @@ from recommender import recommend, df  # Or adjust this import if your structure
 
 st.set_page_config(page_title="Movie Recommender", layout="wide")
 
-st.title("🎬 Movie Recommender System")
+st.title("🎬 Sam's Recommendation ")
 st.markdown("Find similar movies based on content and ratings!")
 
 # Dropdown list of movie titles
@@ -31,7 +31,7 @@ if results:
         with col:
             if poster_path:
                 full_url = f"https://image.tmdb.org/t/p/w500{poster_path}"
-                st.image(full_url, use_column_width=True)
+                st.image(full_url, use_container_width=True)
             st.markdown(f"**{title}**  ⭐ {rating}")
 else:
     st.warning("No good matches found.")
